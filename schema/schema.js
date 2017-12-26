@@ -11,9 +11,34 @@ const UserSchema = new Schema({
   vip: Boolean,
 }, { collection: 'user' }) // 规定collection name 不为复数形式
 
+// UserSchema.methods = {
+//   findVipUser() {
+//     console.log(this);
+    
+//     return this.find({ vip: true })
+//   }
+// }
+
+UserSchema.methods.findVipUser = async function () {
+  console.log(this)
+  return await this.find({ vip: true })
+}
+UserSchema.methods.mett = function () {
+  console.log(this)
+}
+
 const UserModel = mongoose.model('user', UserSchema)
 
-UserModel.create({
-  name: 'xiaoyang',
-  vip: true,
-})
+// UserModel.create({
+//   name: 'xiaoyang',
+//   vip: true,
+// })
+
+;(async () => {
+  
+})()
+
+
+
+
+

@@ -2,6 +2,8 @@ const mongoose = require('mongoose')
 
 const uri = 'mongodb://localhost:27017/mongo-boilerplate'
 
+mongoose.Promise = global.Promise
+
 mongoose.connect(uri, { useMongoClient: true })
 
 const db = mongoose.connection
